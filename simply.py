@@ -1,7 +1,11 @@
 """
 Tic Tac Toe Game
 """
-game_board = [["", "", ""], ["", "", ""], ["", "", ""]]
+game_board = [[" ", "|", " "],
+              ["-", "+", "-"],
+              [" ", "|", " "],
+              ["-", "+", "-"],
+              [" ", "|", " "]]
 
 def print_game_board(board):
     """game board
@@ -41,5 +45,5 @@ def position_on_bord(pos):
     elif pos == 9:
         game_board[2][2] = 'X'
 
-position_on_bord(position)
+# position_on_bord(position)
 print_game_board(game_board)
