@@ -2,7 +2,7 @@
 Tic Tac Toe Game
 """
 game_board = [[" ", "|", " ", "|", " "],
-              ["-", "+", "-", " +", "-"],
+              ["-", "+", "-", "+", "-"],
               [" ", "|", " ", "|", " "],
               ["-", "+", "-", "+", "-"],
               [" ", "|", " ", "|", " "]]
@@ -33,17 +33,17 @@ def position_on_bord(pos):
     elif pos == 3:
         game_board[0][4] = 'X'
     elif pos == 4:
-        game_board[1][0] = 'X'
-    elif pos == 5:
-        game_board[1][2] = 'X'
-    elif pos == 6:
-        game_board[1][4] = 'X'
-    elif pos == 7:
         game_board[2][0] = 'X'
-    elif pos == 8:
+    elif pos == 5:
         game_board[2][2] = 'X'
-    elif pos == 9:
+    elif pos == 6:
         game_board[2][4] = 'X'
+    elif pos == 7:
+        game_board[4][0] = 'X'
+    elif pos == 8:
+        game_board[4][2] = 'X'
+    elif pos == 9:
+        game_board[4][4] = 'X'
 
 position_on_bord(position)
 print_game_board(game_board)
