@@ -7,6 +7,9 @@ game_board = [[" ", "|", " ", "|", " "],
               ["-", "+", "-", "+", "-"],
               [" ", "|", " ", "|", " "]]
 
+player_position = []
+computer_position = []
+
 def print_game_board(board):
     """game board
 
@@ -18,32 +21,39 @@ def print_game_board(board):
             print(column, end=' ')
         print()
 
-position = int(input("Enter the position: "))
-
-def position_on_bord(pos):
-    """adding elements to list
+def position_on_bord(board, pos, user):
+    """_summary_
 
     Args:
-        pos (int): adding X or O to the board
+        pos (_int_): _description_
+        user (_string_): _description_
     """
+    if user == "player":
+        symbol = 'X'
+        player_position.append(pos)
+    elif user == "cpu":
+        symbol = 'O'
+        computer_position.append(pos)
+    
     if pos == 1:
-        game_board[0][0] = 'X'
+        board[0][0] = symbol
     elif pos == 2:
-        game_board[0][2] = 'X'
+        board[0][2] = symbol
     elif pos == 3:
-        game_board[0][4] = 'X'
+        board[0][4] = symbol
     elif pos == 4:
-        game_board[2][0] = 'X'
+        board[2][0] = symbol
     elif pos == 5:
-        game_board[2][2] = 'X'
+        board[2][2] = symbol
     elif pos == 6:
-        game_board[2][4] = 'X'
+        board[2][4] = symbol
     elif pos == 7:
-        game_board[4][0] = 'X'
+        board[4][0] = symbol
     elif pos == 8:
-        game_board[4][2] = 'X'
+        board[4][2] = symbol
     elif pos == 9:
-        game_board[4][4] = 'X'
-
-position_on_bord(position)
+        board[4][4] = symbol        
+   
+position = int(input("Enter the position: "))
+position_on_bord(game_board, position, user="player")
 print_game_board(game_board)
