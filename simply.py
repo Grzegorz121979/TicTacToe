@@ -1,6 +1,7 @@
 """
 Tic Tac Toe Game
 """
+import random
 game_board = [[" ", "|", " ", "|", " "],
               ["-", "+", "-", "+", "-"],
               [" ", "|", " ", "|", " "],
@@ -52,8 +53,18 @@ def position_on_bord(board, pos, user):
     elif pos == 8:
         board[4][2] = symbol
     elif pos == 9:
-        board[4][4] = symbol        
-   
-position = int(input("Enter the position: "))
-position_on_bord(game_board, position, user="player")
-print_game_board(game_board)
+        board[4][4] = symbol
+
+while True:      
+    player_numer = int(input("Enter the position: "))
+    cpu_number = random.randint(1, 9)
+    while player_numer in player_position or player_numer in computer_position:
+        print("The position is taken: ")
+        player_numer = int(input("Enter the position: "))
+    player_position.append(player_numer)
+    while cpu_number in computer_position or cpu_number in player_position:
+        cpu_number = random.randint(1, 9)
+    computer_position.append(cpu_number)
+    position_on_bord(game_board, player_numer, user="player")
+    position_on_bord(game_board, cpu_number, user="cpu")
+    print_game_board(game_board)
