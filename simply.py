@@ -36,7 +36,6 @@ def position_on_bord(board, pos, user):
     elif user == "cpu":
         symbol = 'O'
         computer_position.append(pos)
-    
     if pos == 1:
         board[0][0] = symbol
     elif pos == 2:
@@ -55,10 +54,9 @@ def position_on_bord(board, pos, user):
         board[4][2] = symbol
     elif pos == 9:
         board[4][4] = symbol
-        
+
 def victory_conditions():
     """function
-    
     """
     victory_positions = []
     top_row = [1, 2, 3]
@@ -85,7 +83,7 @@ def victory_conditions():
         if len(player_position) + len(computer_position) == 9:
             return "Draw"
     return ""
-print_game_board(game_board)    
+print_game_board(game_board)
 while True:
     player_numer = int(input("Enter the position: "))
     cpu_number = random.randint(1, 9)
@@ -93,15 +91,16 @@ while True:
         print("The position is taken: ")
         player_numer = int(input("Enter the position: "))
     position_on_bord(game_board, player_numer, user="player")
-    result = victory_conditions()
-    if len(result) > 0:
-        print(result)
+    RESULT = victory_conditions()
+    if len(RESULT) > 0:
+        print(RESULT)
         break
     while cpu_number in computer_position or cpu_number in player_position:
         cpu_number = random.randint(1, 9)
     position_on_bord(game_board, cpu_number, user="cpu")
-    result = victory_conditions()
+    RESULT = victory_conditions()
     print_game_board(game_board)
-    if len(result) > 0:
-        print(result)
+    if len(RESULT) > 0:
+        print(RESULT)
         break
+    
