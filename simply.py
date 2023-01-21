@@ -77,16 +77,16 @@ def victory_conditions():
     victory_positions.append(right_col)
     victory_positions.append(left_cross)
     victory_positions.append(right_cross)
-    for i in range(len(victory_positions)):
-        if collections.Counter(player_position) >= collections.Counter(victory_positions[i]):
+    for index, value in enumerate(victory_positions):
+        if collections.Counter(player_position) >= collections.Counter(value):
             return "YOU WIN!!!"
-        if collections.Counter(computer_position) >= collections.Counter(victory_positions[i]):
+        if collections.Counter(computer_position) >= collections.Counter(value):
             return "Cpu win!"
         if len(player_position) + len(computer_position) == 9:
             return "Draw"
     return ""
-       
-while True:      
+    
+while True:
     player_numer = int(input("Enter the position: "))
     cpu_number = random.randint(1, 9)
     while player_numer in player_position or player_numer in computer_position:
@@ -105,4 +105,3 @@ while True:
     if len(result) > 0:
         print(result)
         break
-    
