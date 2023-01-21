@@ -91,6 +91,7 @@ while True:
         print("The position is taken: ")
         player_numer = int(input("Enter the position: "))
     position_on_bord(game_board, player_numer, user="player")
+    print_game_board(game_board)
     RESULT = victory_conditions()
     if len(RESULT) > 0:
         print(RESULT)
