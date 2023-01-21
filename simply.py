@@ -27,8 +27,8 @@ def position_on_bord(board, pos, user):
     """_summary_
 
     Args:
-        pos (_int_): _description_
-        user (_string_): _description_
+        pos (int): _description_
+        user (string): _description_
     """
     if user == "player":
         symbol = 'X'
@@ -85,7 +85,7 @@ def victory_conditions():
         if len(player_position) + len(computer_position) == 9:
             return "Draw"
     return ""
-    
+print_game_board(game_board)    
 while True:
     player_numer = int(input("Enter the position: "))
     cpu_number = random.randint(1, 9)
